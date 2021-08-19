@@ -1,10 +1,12 @@
-.signup {
+.signup,
+.login {
 	width: 100vw;
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 
-	.signup-left {
+	.signup-left,
+	.login-left {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -27,7 +29,8 @@
 		}
 	}
 
-	.signup-right {
+	.signup-right,
+	.login-right {
 		background-color: $light-purple;
 		padding: 10rem 5rem;
 		position: relative;
@@ -111,7 +114,8 @@
 				padding: 1rem;
 			}
 
-			label[for='agreement'] {
+			label[for='agreement'],
+			label[for='remember-me'] {
 				font-size: 1.5rem;
 				margin: 4rem auto;
 
