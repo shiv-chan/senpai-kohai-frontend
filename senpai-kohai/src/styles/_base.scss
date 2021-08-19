@@ -1,0 +1,15 @@
+// colour
+$navy: #424874;
+$light-purple: #f4eeff;
+$blue-grey: #a6b1e1;
+$lavender: #dcd6f7;
+
+// reset
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	font-family: 'Roboto', sans-serif;
+	color: $navy;
+}
