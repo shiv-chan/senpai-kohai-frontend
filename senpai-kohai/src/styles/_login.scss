@@ -1,0 +1,17 @@
+.login .login-right {
+	hr::before {
+		content: 'or Sign in with Email';
+		left: 35%;
+	}
+
+	form {
+		label[for='remember-me'] {
+			margin-left: 0;
+			margin-right: 0;
+
+			a {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
