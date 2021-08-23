@@ -1,9 +1,4 @@
-.login .login-right {
-	hr::before {
-		content: 'or Sign in with Email';
-		left: 35%;
-	}
-
+.login .login-right .display {
 	form {
 		label[for='remember-me'] {
 			margin-left: 0;
