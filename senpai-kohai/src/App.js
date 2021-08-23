@@ -8,7 +8,8 @@ import {
 import Home from './features/Home';
 import Signup from './features/signup/Signup';
 import Login from './features/login/Login';
-import ForgotPassword from './features/signup/ForgotPassword';
+import ForgotPassword from './features/password/ForgotPassword';
+import ResetPassword from './features/password/ResetPassword';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 				<Route path="/signup" component={Signup} />
 				<Route path="/login" component={Login} />
 				<Route path="/forgot-password" component={ForgotPassword} />
+				<Route path="/reset-password" component={ResetPassword} />
 			</Switch>
 		</Router>
 	);
