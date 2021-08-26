@@ -7,12 +7,29 @@ import {
 	AiFillEyeInvisible,
 	AiFillEye,
 } from 'react-icons/all';
+import axios from 'axios';
 
 function Signup() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [agreed, setAgreed] = useState(false);
 	const [openEye, setOpenEye] = useState(false);
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+
+		const registered = {
+			email,
+			password,
+		};
+
+		axios
+			.post('http://localhost:3001/signup', registered)
+			.then((res) => console.log(res.data));
+
+		setEmail('');
+		setPassword('');
+	};
 
 	return (
 		<div className="signup">
@@ -94,7 +111,7 @@ function Signup() {
 							I agree to Senpai Kohai’s <Link>Terms of Service</Link> and{' '}
 							<Link>Privacy Policy</Link>
 						</label>
-						<button type="submit" onClick={(e) => e.preventDefault()}>
+						<button type="submit" onClick={onSubmit}>
 							Sign Up
 						</button>
 					</form>
