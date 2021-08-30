@@ -7,12 +7,29 @@ import {
 	AiFillEyeInvisible,
 	AiFillEye,
 } from 'react-icons/all';
+import axios from 'axios';
 
 function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [remember, setRemember] = useState(false);
 	const [openEye, setOpenEye] = useState(false);
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+
+		const userInfo = {
+			email,
+			password,
+		};
+
+		axios
+			.post('http://localhost:3001/login', userInfo)
+			.then((res) => console.log('login'));
+
+		setEmail('');
+		setPassword('');
+	};
 
 	return (
 		<div className="login">
@@ -40,8 +57,8 @@ function Login() {
 						</button>
 					</section>
 					<hr />
-					<form for="" method="">
-						<label for="email">Email address</label>
+					<form>
+						<label htmlFor="email">Email address</label>
 						<input
 							type="email"
 							name="email"
@@ -49,7 +66,7 @@ function Login() {
 							value={email}
 							onChange={(e) => setEmail(e.currentTarget.value)}
 						/>
-						<label for="password">Password</label>
+						<label htmlFor="password">Password</label>
 						<input
 							type={openEye ? 'text' : 'password'}
 							name="password"
@@ -83,7 +100,7 @@ function Login() {
 							/>
 						)}
 
-						<label for="remember-me">
+						<label htmlFor="remember-me">
 							<input
 								type="checkbox"
 								name="remember-me"
@@ -93,7 +110,7 @@ function Login() {
 							/>
 							Remember me <Link to="/forgot-password">Forgot password?</Link>
 						</label>
-						<button type="submit" onClick={(e) => e.preventDefault()}>
+						<button type="submit" onClick={onSubmit}>
 							Login
 						</button>
 					</form>

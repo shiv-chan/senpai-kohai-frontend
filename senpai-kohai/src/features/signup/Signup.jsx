@@ -57,8 +57,8 @@ function Signup() {
 						</button>
 					</section>
 					<hr />
-					<form for="" method="">
-						<label for="email">Email address</label>
+					<form>
+						<label htmlFor="email">Email address</label>
 						<input
 							type="email"
 							name="email"
@@ -66,7 +66,7 @@ function Signup() {
 							value={email}
 							onChange={(e) => setEmail(e.currentTarget.value)}
 						/>
-						<label for="password">Password</label>
+						<label htmlFor="password">Password</label>
 						<input
 							type={openEye ? 'text' : 'password'}
 							name="password"
@@ -100,7 +100,7 @@ function Signup() {
 							/>
 						)}
 
-						<label for="agreement">
+						<label htmlFor="agreement">
 							<input
 								type="checkbox"
 								name="agreement"
@@ -108,8 +108,8 @@ function Signup() {
 								checked={agreed}
 								onChange={() => setAgreed(!agreed)}
 							/>
-							I agree to Senpai Kohai’s <Link>Terms of Service</Link> and{' '}
-							<Link>Privacy Policy</Link>
+							I agree to Senpai Kohai’s <Link to="/">Terms of Service</Link> and{' '}
+							<Link to="/">Privacy Policy</Link>
 						</label>
 						<button type="submit" onClick={onSubmit}>
 							Sign Up
