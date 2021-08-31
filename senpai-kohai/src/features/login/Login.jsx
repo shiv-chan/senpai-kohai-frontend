@@ -25,7 +25,12 @@ function Login() {
 
 		axios
 			.post('http://localhost:3001/login', userInfo)
-			.then((res) => console.log('login'));
+			.then((res) => {
+				alert('Login successfully!');
+			})
+			.catch((err) => {
+				alert('Sorry...something is wrong!');
+			});
 
 		setEmail('');
 		setPassword('');
